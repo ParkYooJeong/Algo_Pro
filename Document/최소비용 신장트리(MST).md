@@ -1,8 +1,13 @@
 
+- [최소비용 신장트리(MST)](#최소비용-신장트리)
+	- [유니온 파인드(Union Find](#유니온-파인드union-find)
+	- [크루스칼(Kruskal)](#크루스칼kruskal-알고리즘)
+	- [프림(Prim)](#프림prim-알고리즘)
 
-[TOC]
-
-
+- [최단 경로 알고리즘](#최단경로)
+	- [다익스트라(Dijkstra)](#다익스트라-알고리즘dijkstra)
+	- [플로이드와샬(Floyd)](#플로이드-알고리즘floyd)
+	- [벨만 포드(Bellman-Ford algorithm)](#벨만-포드-알고리즘bellman-ford-algorithm)
 
 # **최소비용 신장트리**
 
