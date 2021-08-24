@@ -24,7 +24,7 @@
  그 검사를 해주는  알고리즘을 Union-Find 알고리즘이라고 한다.
 
 
-
+<br>
 ## 유니온 파인드(Union-Find)
 
 ---
@@ -94,7 +94,7 @@ boolean union(int a, int b){
 ```
 
 Union-Find를 사용해서 Kruskal 알고리즘을 구현해보자.
-
+<br>
 ## 크루스칼(Kruskal) 알고리즘
 
 ---
@@ -207,7 +207,7 @@ public class Main {
 }
 ```
 
-
+<br>
 
 ## 프림(Prim) 알고리즘
 
@@ -319,7 +319,7 @@ public class Prim_pq {
 ```
 
 
-
+<br>
 
 
 #  최단경로
@@ -333,7 +333,7 @@ public class Prim_pq {
 - 플로이드 알고리즘(Floyd)
 
 - 벨만 포드 알고리즘(Bellman-Ford algorithm)
-
+<br>
   
 
 ### 다익스트라 알고리즘(Dijkstra)
@@ -425,7 +425,7 @@ public class dijkstraTest05 {
 ```
 
 
-
+<br>
 
 
 ### 플로이드 알고리즘(Floyd)
@@ -465,7 +465,7 @@ for(k=0;k<n;k++){//경유지
 
 
 
-
+<br>
 ###  벨만 포드 알고리즘(Bellman-Ford algorithm)
 
 ---
