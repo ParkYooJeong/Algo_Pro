@@ -339,7 +339,7 @@ public class Prim_pq {
 <br>
   
 
-### 다익스트라 알고리즘(Dijkstra)
+## 다익스트라 알고리즘(Dijkstra)
 
 ---
 
@@ -431,7 +431,7 @@ public class dijkstraTest05 {
 <br>
 
 
-### 플로이드 알고리즘(Floyd)
+## 플로이드 알고리즘(Floyd)
 
 ---
 
@@ -469,7 +469,7 @@ for(k=0;k<n;k++){//경유지
 
 
 <br>
-###  벨만 포드 알고리즘(Bellman-Ford algorithm)
+##  벨만 포드 알고리즘(Bellman-Ford algorithm)
 
 ---
 
