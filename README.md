@@ -1,6 +1,8 @@
 # Algo_Pro
 프로 준비
 
+[MST & 최단경로 알고리즘](./Document/최소비용 신장트리(MST).md)
+
 <details>
 <summary>병합정렬(MergeSort)</summary>
 
