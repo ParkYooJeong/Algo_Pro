@@ -1,8 +1,8 @@
 
 
-- 최소비용(MST)- 크루스칼, 프림, 다익스트라
+[TOC]
 
-- 최단거리 - 벨만-포드, 플로이드-와샬
+
 
 # **최소비용 신장트리**
 
@@ -340,7 +340,6 @@ public class Prim_pq {
 
 - 벨만 포드 알고리즘(Bellman-Ford algorithm)
 <br>
-  
 
 ## 다익스트라 알고리즘(Dijkstra)
 
