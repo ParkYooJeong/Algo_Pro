@@ -52,6 +52,8 @@
 <details>
     <summary>세그먼트트리(SegmentTree)</summary>
 
+ - 구간 합
+ 
 ```java
 class SegmentTree {
     long[] segmentTree;
@@ -106,6 +108,8 @@ class SegmentTree {
 }
 ```
 
+ - 구간 최대 최소
+ 
 ```java
 package pro;
 
