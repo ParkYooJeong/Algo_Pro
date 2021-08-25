@@ -107,3 +107,40 @@ class SegmentTree {
 ```
 
 </details>
+ 
+ <details>
+    <summary>에라토스테네스의 체</summary>
+  
+  ```java
+  boolean[] arr = new boolean[b + 1];
+        arr[1]=true;//1제외
+
+        for (int i = 2; i <= b; i++) {
+            if (arr[i])//이미 지워진 수 건너 뛰기
+                continue;
+
+            for (int j = 2 * i; j <= b; j += i) {
+                //지울 때 자기자신은 지우지 않는다.
+                arr[j] = true;
+            }
+        }
+  ```
+ </details>
+ 
+ <details>
+    <summary>유클리드 호제법(SegmentTree)</summary>
+
+```java
+  //a와 b의 최대공약수를 구하기 위해서 a mod b=c => b mod c 무한반복 하다가 c가 0일 때 b가 최대공약수
+  
+  private static GCD(int a, int b){
+    int tmp;
+    while(b){      //b가 0이 될 때까지
+      tmp = a % b;
+      a = b;
+      b = c;
+  }
+  return a;
+}
+```
+ </details>
