@@ -51,7 +51,8 @@
 
 <details>
     <summary>세그먼트트리(SegmentTree)</summary>
-
+<br>
+ 
  - 구간 합
  
 ```java
