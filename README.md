@@ -106,11 +106,96 @@ class SegmentTree {
 }
 ```
 
+```java
+package pro;
+
+class SegmentTree3 {
+    int[] minTree;
+    int[] maxTree;
+
+    public SegmentTree3(int[] arr, int N) {
+        minTree = new int[N * 4];
+        maxTree = new int[N * 4];
+        minInit(arr, 1, N, 1);
+        maxInit(arr, 1, N, 1);
+    }
+
+    private int maxInit(int[] arr, int left, int right, int node) {
+        if (left == right)
+            return maxTree[node] = arr[left];
+
+        int mid = (left + right) / 2;
+        return maxTree[node] = Math.max(maxInit(arr, left, mid, node * 2), maxInit(arr, mid + 1, right, node * 2 + 1));
+    }
+
+
+    private int minInit(int[] arr, int left, int right, int node) {
+        if (left == right)
+            return minTree[node] = arr[left];
+
+        int mid = (left + right) / 2;
+        return minTree[node] = Math.min(minInit(arr, left, mid, node * 2), minInit(arr, mid + 1, right, node * 2 + 1));
+
+    }
+
+
+    // left right 현재 인덱스 범위
+// a b는 구하는 범위
+    public int minFind(int left, int right, int a, int b, int node) {
+        if (a <= left && right <= b) {
+            return minTree[node];
+        } else if (left > b || right < a) {
+            return Integer.MAX_VALUE;
+        }
+
+        int mid = (left + right) / 2;
+        return Math.min(minFind(left, mid, a, b, node * 2), minFind(mid + 1, right, a, b, node * 2 + 1));
+    }
+
+
+    public int maxFind(int left, int right, int a, int b, int node) {
+        if (a <= left && right <= b) {
+            return maxTree[node];
+        } else if (left > b || right < a) {
+            return 0;
+        }
+
+        int mid = (left + right) / 2;
+        return Math.max(maxFind(left, mid, a, b, node * 2), maxFind(mid + 1, right, a, b, node * 2 + 1));
+    }
+
+
+    public int minUpdate(int left, int right, int[] arr, int change, int idx, int node) {
+        int mid = (left + right) / 2;
+        if (left == right) {
+            return minTree[node] = arr[left];
+        } else if (idx < left || idx > right)// 없으면 시간초과
+            return minTree[node];
+
+        return minTree[node] = Math.min(minUpdate(left, mid, arr, change, idx, node * 2),
+                minUpdate(mid + 1, right, arr, change, idx, node * 2 + 1));
+    }
+
+    public int maxUpdate(int left, int right, int[] arr, int change, int idx, int node) {
+
+        int mid = (left + right) / 2;
+        if (left == right) {
+            return maxTree[node] = arr[left];
+        } else if (idx < left || idx > right)// 없으면 시간초과
+            return maxTree[node];
+
+        return maxTree[node] = Math.max(maxUpdate(left, mid, arr, change, idx, node * 2),
+                maxUpdate(mid + 1, right, arr, change, idx, node * 2 + 1));
+    }
+```
+
+
+
 </details>
- 
+
  <details>
     <summary>에라토스테네스의 체</summary>
-  
+
   ```java
   boolean[] arr = new boolean[b + 1];
         arr[1]=true;//1제외
@@ -126,7 +211,7 @@ class SegmentTree {
         }
   ```
  </details>
- 
+
  <details>
     <summary>유클리드 호제법(SegmentTree)</summary>
 
