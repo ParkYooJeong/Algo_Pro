@@ -1,6 +1,6 @@
 
 - [최소비용 신장트리(MST)](#최소비용-신장트리)
-	- [유니온 파인드(Union Find](#유니온-파인드union-find)
+	- [유니온 파인드(Union Find)](#유니온-파인드union-find)
 	- [크루스칼(Kruskal)](#크루스칼kruskal-알고리즘)
 	- [프림(Prim)](#프림prim-알고리즘)
 
