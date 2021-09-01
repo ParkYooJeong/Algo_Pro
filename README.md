@@ -4,7 +4,63 @@
 
 [최소신장트리 & 최단경로 알고리즘](./Document/최소비용신장트리(MST).md)
 
-
+<details>
+ <summary>최소공통조상(LCA)</summary>
+ <br>
+ 
+ - 초기화
+ ```java
+ 
+            H = (int) (Math.log(N) / Math.log(2)) + 1;
+ 
+            depth = new int[N+1];
+            parent = new int[H + 1][N + 1];
+ 
+            for (int i = 2; i <= N; i++) {
+                parent[0][i] = Integer.parseInt(st.nextToken());//2의 0승 위의 노드
+                depth[i] = depth[parent[0][i]] + 1;//현재 노드는 부모노드의 +1
+            }
+ 
+            for (int k = 1; k <= H; k++) {
+                for (int v = 1; v <= N; v++) {
+                    parent[k][v] = parent[k - 1][parent[k - 1][v]];// 표를 채워줌
+                }
+            }
+ ```
+ 
+ - 로직
+                                   
+ ```java
+     private static int lca(int a, int b) {
+        // a>b swap
+        if (depth[a] < depth[b]) {
+            a ^= b;
+            b ^= a;
+            a ^= b;
+        }
+ 
+        // a==b가 되도록 2^k 만큼 올라간다.
+        int diff = depth[a] - depth[b];
+        for (int k = H; k >= 0; k--) {
+            if (diff >= (1 << k)) {
+                a = parent[k][a];
+                diff = depth[a] - depth[b];
+            }
+        }
+        if (a == b)
+            return a;
+        // p[k][a]==p[k][b] 가 되도록 올라간다.
+        for (int k = H; k >= 0; k--) {
+            if (parent[k][a] != parent[k][b]) {
+                a = parent[k][a];
+                b = parent[k][b];
+            }
+        }
+ 
+        return parent[0][a];
+    }
+ ```
+ </details>
 
 <details>
 <summary>병합정렬(MergeSort)</summary>
