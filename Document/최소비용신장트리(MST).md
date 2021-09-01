@@ -506,13 +506,13 @@ dist의 원소를 INF으로 초기화.
 bool is_negative_cycle=false;
 for (int count = 1; count <= n; count++) { (총 n번 계산을 반복합니다. )
 
-	for (int check_node = 1; check_node <= n; check_node) { (모든 정점을 탐색합니다. )
+	for (int check_node = 1; check_node <= n; check_node) { (모든 정점을 탐색합니다. )//경유지
 		if (dist[check_node] == INF) continue; ( 정점의 최단거리가 아직 갱신되지 않았으면 빠꾸)
-		for (check_node에 붙은 정점 탐색) {
+		for (check_node에 붙은 정점 탐색) {//도착지
 			int connect_node, connect_node_weight 값을 정해줍니다.
-				if (dist[check_node] + connect_node_weight < dist[connect_node]) {
+				if (dist[check_node] + connect_node_weight < dist[connect_node]) {//갱신
 					dist[connect_node] = dist[check_node] + connect_node_weight
-						if (count == n) is_negative_cycle = true; (이건 밑에 설명 )
+						if (count == n) is_negative_cycle = true; (이건 밑에 설명 )//중간에 업데이트 안됐을때 break 하면 더 빠르다
 			}
 		}
 	}
