@@ -24,30 +24,23 @@ public class backjoon_전구 {
         for (int i = 1; i <= N; i++) {
             color[i] = Integer.parseInt(st.nextToken());
         }
-        for (int i = 1; i < N; i++) {
-            for (int j = 1; j + i <= N; j++) {
+        for (int i = 1; i < N; i++) {//차이
+            for (int j = 1; j + i <= N; j++) {//시작점
                 int s = j;
                 int e = j + i;
 
 //                d[i][j] = 1 << 30;
                 d[s][e] = 987654321;
-                for (int k = s; k < e; k++) {
-                    d[s][e] = Math.min(d[s][k] + d[k + 1][e] + (color[i] == color[k + 1] ? 0 : 1), d[s][e]);
+                for (int k = s; k < e; k++) {//합치기
+                    d[s][e] = Math.min(d[s][k] + d[k + 1][e] + (color[s] == color[k + 1] ? 0 : 1), d[s][e]);
                 }
 
             }
         }
-        for (int j = 1; j <= N; j++) {
-            System.out.println(Arrays.toString(d[j]));
-        }
         System.out.println(d[1][N]);
 
         //리커시브
-        d = new int[N + 1][N + 1];
-        System.out.println(cal(1, N));
-        for (int j = 1; j <= N; j++) {
-            System.out.println(Arrays.toString(d[j]));
-        }
+//      System.out.println(cal(1, N));
     }
 
     private static int cal(int i, int j) {
