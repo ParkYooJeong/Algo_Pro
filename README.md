@@ -342,7 +342,7 @@ class SegmentTree3 {
  </details>
 
  <details>
-    <summary>유클리드 호제법(SegmentTree)</summary>
+    <summary>유클리드 호제법(Euclidean algorithm)</summary>
 
 ```java
   //a와 b의 최대공약수를 구하기 위해서 a mod b=c => b mod c 무한반복 하다가 c가 0일 때 b가 최대공약수
